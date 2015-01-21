@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library>
+
+    <!-- Setting up a shared backend can use this logic. -->
+    <include path="backends/sample_shared/duell_library.xml" if="android||ios" />
+
+    <!-- Setting up independent backends. For further native configuration check available libraries. -->
+    <include path="backends/sample_ios/duell_library.xml" if="ios" />
+    <include path="backends/sample_flash/duell_library.xml" if="flash" />
+    <include path="backends/sample_android/duell_library.xml" if="android" />
+    <include path="backends/sample_html5/duell_library.xml" if="html5" />
+
+</library>

@@ -1,0 +1,23 @@
+package duell.create;
+
+import duell.defines.DuellDefines;
+import duell.objects.DuellLib;
+import duell.helpers.TemplateHelper;
+
+class PluginCreate
+{
+    public function new()
+    {}
+
+    public function run(): String
+    {
+        if (sys.FileSystem.exists(haxe.io.Path.join([Sys.getCwd(), duell.defines.DuellDefines.PROJECT_CONFIG_FILENAME])))
+        {
+            throw "Folder already has a " + duell.defines.DuellDefines.PROJECT_CONFIG_FILENAME;
+        }
+
+        TemplateHelper.recursiveCopyTemplatedFiles(haxe.io.Path.join([DuellLib.getDuellLib("duellcreatelibraryProject").getPath(),"template"]), Sys.getCwd(), null, null);
+
+        return "success";
+    }
+}
