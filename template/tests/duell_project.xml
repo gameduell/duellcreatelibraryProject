@@ -10,6 +10,6 @@
 	<source path="Source" />
 
     <duelllib name="sample" version="master" />
-	<duelllib name="unittest" version="1.*.*" />
+	<duelllib name="unittest" version="1.0.0+" />
 
 </project>
