@@ -3,6 +3,8 @@ package duell.create;
 import duell.defines.DuellDefines;
 import duell.objects.DuellLib;
 import duell.helpers.TemplateHelper;
+import sys.FileSystem;
+import haxe.io.Path;
 
 class PluginCreate
 {
@@ -11,12 +13,12 @@ class PluginCreate
 
     public function run(): String
     {
-        if (sys.FileSystem.exists(haxe.io.Path.join([Sys.getCwd(), duell.defines.DuellDefines.PROJECT_CONFIG_FILENAME])))
+        if (FileSystem.exists(Path.join([Sys.getCwd(), DuellDefines.LIB_CONFIG_FILENAME])))
         {
-            throw "Folder already has a " + duell.defines.DuellDefines.PROJECT_CONFIG_FILENAME;
+            throw "Folder already has a " + DuellDefines.LIB_CONFIG_FILENAME;
         }
 
-        TemplateHelper.recursiveCopyTemplatedFiles(haxe.io.Path.join([DuellLib.getDuellLib("duellcreatelibraryProject").getPath(),"template"]), Sys.getCwd(), null, null);
+        TemplateHelper.recursiveCopyTemplatedFiles(Path.join([DuellLib.getDuellLib("duellcreatelibraryProject").getPath(), "template"]), Sys.getCwd(), null, null);
 
         return "success";
     }

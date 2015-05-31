@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<library>
+<library xmlns="duell">
 
     <!-- Setting up a shared backend can use this logic. -->
     <include path="backends/sample_shared/duell_library.xml" if="android||ios" />

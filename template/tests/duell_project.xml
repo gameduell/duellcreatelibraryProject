@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<project>
-	
-	<app title="SampleTest" file="sampleTest" package="de.gameduell.sampletest" version="0.0.1" company="GameDuell GmbH"  />
+<project xmlns="duell">
+    
+    <app title="SampleTest" file="sampleTest" package="com.yourorganisation.testproject" version="0.0.1" company="Your Organisation"  />
 
-	<!-- Quick setup of a unit-test project or an engine test project -->
-	<main name="MainUnitTest" />
-	<!-- <main name="MainEngine" /> -->
-	
-	<source path="Source" />
+    <main name="MainUnitTest" />>
+    
+    <source path="Source" />
 
     <duelllib name="sample" version="master" />
-	<duelllib name="unittest" version="1.0.0+" />
+    <duelllib name="unittest" version="1.0.0+" />
 
 </project>
