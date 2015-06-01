@@ -1,51 +1,42 @@
-package;
-
 import test.SampleUnitTest;
-import unittest.TestRunner;
 import unittest.implementations.TestHTTPLogger;
 import unittest.implementations.TestJUnitLogger;
 import unittest.implementations.TestSimpleLogger;
+
+import unittest.TestRunner;
 
 import duell.DuellKit;
 
 class MainUnitTest
 {
-    private var r: TestRunner;
-
-    public function new()
+    static function main()
     {
-        DuellKit.initialize(startAfterDuellIsInitialized);
+        DuellKit.initialize(start);
     }
 
-    private function startAfterDuellIsInitialized(): Void
+    static function start() : Void
     {
-        r = new TestRunner(testComplete);
+        var r = new TestRunner(testComplete, DuellKit.instance().onError);
         r.add(new SampleUnitTest());
 
 #if test
 
-        #if jenkins
+#if jenkins
         r.addLogger(new TestHTTPLogger(new TestJUnitLogger()));
-        #else
+#else
         r.addLogger(new TestHTTPLogger(new TestSimpleLogger()));
-        #end
-        
-        #else
+#end
+
+#else
         r.addLogger(new TestSimpleLogger());
 #end
 
         r.run();
     }
 
-    private function testComplete(): Void
+    static function testComplete()
     {
-        trace(r.result);
+
     }
 
-    /// MAIN
-    static var _main: MainUnitTest;
-    static function main(): Void
-    {
-        _main = new MainUnitTest();
-    }
 }
