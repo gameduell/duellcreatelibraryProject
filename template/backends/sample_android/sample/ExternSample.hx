@@ -1,15 +1,20 @@
 package sample;
 
+import hxjni.JNI;
+
 /**
     Implementation of the class for Android.
 **/
 class ExternSample
 {
+    private static var doOneThingNative = JNI.createStaticMethod("com/test/ExternalInterface",
+        "doOneThing", "(Ljava/lang/String;)Ljava/lang/String;");
+
     public function new()
     {}
 
-    public function doOneThing(): Void
+    public function doOneThing(): String
     {
-        trace("do one thing in Android");
+        return doOneThingNative("here");
     }
 }

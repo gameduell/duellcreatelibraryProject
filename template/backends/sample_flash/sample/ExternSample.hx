@@ -8,8 +8,8 @@ class ExternSample
     public function new()
     {}
 
-    public function doOneThing(): Void
+    public function doOneThing(): String
     {
-        trace("do one thing in Flash");
+        return "do one thing in here";
     }
 }

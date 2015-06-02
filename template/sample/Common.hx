@@ -6,7 +6,10 @@ package sample;
 class Common
 {
     public function new()
+    {}
+
+    public function hi(): String
     {
-        trace("Common Haxe backend");
+        return "Common Haxe backend";
     }
 }

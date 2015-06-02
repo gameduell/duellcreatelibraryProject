@@ -21,11 +21,11 @@ class MainUnitTest
 
 #if test
 
-#if jenkins
+    #if jenkins
         r.addLogger(new TestHTTPLogger(new TestJUnitLogger()));
-#else
+    #else
         r.addLogger(new TestHTTPLogger(new TestSimpleLogger()));
-#end
+    #end
 
 #else
         r.addLogger(new TestSimpleLogger());

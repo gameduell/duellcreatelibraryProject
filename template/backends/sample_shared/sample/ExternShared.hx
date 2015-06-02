@@ -5,8 +5,8 @@ package sample;
 **/
 class ExternShared
 {
-    public static function doOneOtherThing(): Void
+    public static function doOneOtherThing(): String
     {
-        trace("do one other thing in Android and iOS");
+        return "do one other thing";
     }
 }

@@ -1,0 +1,30 @@
+<!--
+  ~ Copyright (c) 2003-2015 GameDuell GmbH, All Rights Reserved
+  ~ This document is strictly confidential and sole property of GameDuell GmbH, Berlin, Germany
+  -->
+<xml>
+
+	<include name="${HXCPP}/build-tool/BuildCommon.xml"/>
+	
+	<files id="src">
+
+        <include name="${haxelib:duell_duellbuildios}/native/native.xml" />
+
+		<file name="src/ExternalInterface.mm"/>
+		
+	</files>
+	
+	<target id="NDLL" output="${LIBPREFIX}sample_ios${DBG}${LIBEXTRA}" tool="linker" toolid="${STD_MODULE_LINK}">
+		
+		<outdir name="../ndll/${BINDIR}"/>
+		<files id="src"/>
+		
+	</target>
+	
+	<target id="default">
+		
+		<target id="NDLL"/>
+		
+	</target>
+	
+</xml>

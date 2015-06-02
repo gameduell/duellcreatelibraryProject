@@ -10,5 +10,5 @@ extern class ExternSample
     /**
         Does "one thing" different in each platform.
     **/
-    public function doOneThing(): Void;
+    public function doOneThing(): String;
 }

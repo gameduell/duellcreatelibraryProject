@@ -8,5 +8,5 @@ extern class ExternShared
     /**
         Does "one other thing" different in each platform, except in Android and iOS where it does the same.
     **/
-    public static function doOneOtherThing(): Void;
+    public static function doOneOtherThing(): String;
 }
