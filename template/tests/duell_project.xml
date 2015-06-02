@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project xmlns="duell">
-    
+
     <app title="SampleTest" file="sampleTest" package="com.yourorganisation.testproject" version="0.0.1" company="Your Organisation"  />
 
     <main name="MainUnitTest" />
-    
+
     <source path="Source" />
 
     <duelllib name="sample" version="master" />
@@ -15,6 +15,9 @@
         <ios>
             <icon path="Icons/ios"/>
         </ios>
+        <flash>
+            <win-param key="wmode" value="direct" />
+        </flash>
     </platform-config>
 
 </project>
