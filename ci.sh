@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-haxelib remove duell_sample || true > /dev/null
+haxelib remove duell_sample || true >/dev/null 2>&1
 rm -rf tmp
 
 mkdir tmp
