@@ -11,13 +11,4 @@
     <duelllib name="duellkit" version="4.0.0+" />
     <duelllib name="unittest" version="4.0.0+" />
 
-    <platform-config>
-        <ios>
-            <icon path="Icons/ios"/>
-        </ios>
-        <flash>
-            <win-param key="wmode" value="direct" />
-        </flash>
-    </platform-config>
-
 </project>
