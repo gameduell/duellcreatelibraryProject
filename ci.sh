@@ -7,6 +7,7 @@ rm -rf tmp
 mkdir tmp
 cd tmp
 haxelib run duell_duell create libraryProject
+cd libraryProject
 
 haxelib dev duell_sample .
 

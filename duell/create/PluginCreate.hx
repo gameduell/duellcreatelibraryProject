@@ -3,6 +3,7 @@ package duell.create;
 import duell.defines.DuellDefines;
 import duell.objects.DuellLib;
 import duell.helpers.TemplateHelper;
+import duell.helpers.CreationHelper;
 import sys.FileSystem;
 import haxe.io.Path;
 
@@ -18,7 +19,8 @@ class PluginCreate
             throw "Folder already has a " + DuellDefines.LIB_CONFIG_FILENAME;
         }
 
-        TemplateHelper.recursiveCopyTemplatedFiles(Path.join([DuellLib.getDuellLib("duellcreatelibraryProject").getPath(), "template"]), Sys.getCwd(), null, null);
+        var path = CreationHelper.getProjectFolder("libraryProject");
+        TemplateHelper.recursiveCopyTemplatedFiles(Path.join([DuellLib.getDuellLib("duellcreatelibraryProject").getPath(), "template"]), path, null, null);
 
         return "success";
     }
